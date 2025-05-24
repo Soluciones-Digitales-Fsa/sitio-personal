@@ -1,1 +1,208 @@
+/* Reset y base */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #3498DB 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+}
+a {
+    color: #fff;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
 
+/* Contenedor principal */
+.container {
+    max-width: 1200px;
+    margin: 2rem auto 4rem;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.25);
+    padding: 2rem 3rem 3rem;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+}
+header h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #2C3E50;
+    text-transform: uppercase;
+    letter-spacing: 0.15rem;
+    margin-bottom: 0.25rem;
+}
+
+header a[href="logout.php"] {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #2C3E50;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 1rem;
+    box-shadow: 0 6px 15px rgba(75,41,149,0.4);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+    user-select: none;
+}
+header a[href="logout.php"]:hover {
+    background: #633bb7;
+    transform: translateY(-3px);
+    text-decoration: none;
+}
+header a[href="logout.php"]:active {
+    transform: translateY(-1px);
+}
+
+/* Mensaje de notificación */
+.mensaje-exito {
+    background: #d4edda;
+    color: #155724;
+    border: 2px solid #c3e6cb;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    font-weight: 600;
+    box-shadow: inset 0 3px 8px rgba(38,166,91,.3);
+}
+
+/* Sección general */
+section {
+    margin-bottom: 3rem;
+}
+section h2 {
+    font-size: 1.8rem;
+    color: #2C3E50;
+    margin-bottom: 1rem;
+    border-left: 6px solid #4b2995;
+    padding-left: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+
+/* Formularios */
+form {
+    margin-bottom: 1.5rem;
+}
+form input[type="text"],
+form textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    border: 1.8px solid #ccc;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+form input[type="text"]:focus,
+form textarea:focus {
+    border-color: #764ba2;
+    outline: none;
+}
+
+/* Textarea "Sobre Nosotros" más ancha y estilizada */
+textarea {
+    min-height: 160px;
+    resize: vertical;
+}
+
+/* Botones uniformes */
+button {
+    background: #2C3E50;
+    border: none;
+    color: white;
+    font-weight: 700;
+    padding: 0.75rem 1.6rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 15px rgba(75,41,149,0.3);
+}
+button:hover {
+    background: #633bb7;
+}
+
+/* Botones eliminar con color distinto pero misma forma */
+button[title="Eliminar"] {
+    background: #e63946;
+}
+button[title="Eliminar"]:hover {
+    background: #b72a37;
+}
+
+/* Tablas con estilo */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+}
+thead tr th {
+    text-align: left;
+    padding: 12px 15px;
+    background-color: #2C3E50;
+    color: white;
+    font-weight: 600;
+    border-radius: 12px 12px 0 0;
+    user-select: none;
+}
+tbody tr {
+    background: #f8f8fb;
+    box-shadow: 0 1px 5px rgba(85,85,140,0.1);
+}
+tbody tr td {
+    padding: 15px;
+    vertical-align: middle;
+}
+tbody tr td input[type="text"] {
+    background: transparent;
+    border: 1.5px solid transparent;
+    padding: 6px 10px;
+    width: 100%;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    transition: border-color 0.3s ease;
+}
+tbody tr td input[type="text"]:focus {
+    border-color: #764ba2;
+    outline: none;
+}
+tbody tr:hover {
+    background: #e6e0f7;
+}
+
+/* Para campos con texto multilinea */
+.mensaje-texto {
+    white-space: pre-wrap;
+    color: #555;
+    font-size: 0.95rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Layout responsive */
+@media (max-width: 768px) {
+    .container {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+    form {
+        flex-direction: column;
+    }
+    form input[type="text"],
+    form textarea {
+        margin-bottom: 1rem;
+    }
+    thead tr th, tbody tr td {
+        padding: 10px 8px;
+        font-size: 0.95rem;
+    }
+}
