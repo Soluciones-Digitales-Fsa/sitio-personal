@@ -78,6 +78,9 @@ session_start(); ?>
 </html>
 
 <?php
+
+    $showPopup = false;
+    $errorMessage = "";
  
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       include 'db.php';
@@ -110,5 +113,12 @@ session_start(); ?>
       }
     }
   ?>
+
+ <?php if ($showPopup): ?>
+    <div class="alert-popup" id="alertPopup">
+      <p><?php echo htmlspecialchars($errorMessage); ?></p>
+      <button id="closeAlertBtn" aria-label="Cerrar">Cerrar</button>
+    </div>
+  <?php endif; ?>
 
 
