@@ -1,1 +1,270 @@
+:root {
+  --color-fondo: #ecf0f1;
+  --color-primario: #2c3e50;
+  --color-acento: #3498db;
+  --fuente: 'Poppins', sans-serif;
+}
+
+/*Fondo General*/
+body.login-page {
+    background: url('../images/logo.png') no-repeat center center fixed;
+    background-size: cover;
+    font-family: var(--fuente);
+}
+h1, h2, h3 {
+  font-family: var(--fuente);
+}
+
+/* Tarjeta de login */
+.card {
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    background-color: #ffffff;
+}
+
+.form-header {
+    position: relative;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background: linear-gradient(45deg, #3498db, #3498db);
+    color: #2c3e50;
+    text-align: center;
+    padding-top: 50px; /* deja espacio para el icono */
+    overflow: visible; /* por si acaso */
+}
+
+/* Estilo para el icono solo */
+.icon-only {
+    position: absolute;
+    top: -15px; /* sobresale hacia arriba */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white; /* color de fondo del círculo */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    padding: 30px;
+    font-size: 30px;
+    color: #3498db; /* color del ícono */
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    border: 3px solid #3498db;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form-header h3 {
+    margin: 0;
+    padding-top: 10px;
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+/* ícono dentro de input */
+.md-form i.prefix {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  color: #999;
+}
+/* Iconos dentro de inputs */
+.md-form .prefix {
+    margin-right: 10px;
+    color: #c51162;
+}
+
+/* Inputs */
+.md-form input {
+    color: #333;
+    border-bottom: 1px solid #ccc;
+}
+
+.md-form input:focus {
+    border-bottom: 2px solid #c51162;
+    box-shadow: none;
+}
+/* Botón "Ingresar" - fondo con color acento, texto color primario */
+.btn.blue-gradient {
+    background: linear-gradient(45deg, var(--color-acento), var(--color-acento));
+    color: var(--color-primario);
+    border-radius: 50px;
+    padding: 12px 30px;
+    font-weight: 600;
+    font-size: 1rem;
+    border: none;
+    transition: 0.3s ease;
+    width: 100%;
+}
+
+.btn.blue-gradient:hover {
+    background: linear-gradient(45deg, var(--color-primario), var(--color-primario));
+    color: var(--color-fondo);
+}
+
+/* Botón "Volver al inicio" - transparente con letras color primario */
+.btn-outline-blue {
+    background-color: transparent;
+    color: #2c3e50; /* color fijo */;
+    border: 2px solid var(--color-primario);
+    border-radius: 50px;
+    padding: 12px 30px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: 0.3s ease;
+    width: 100%;
+}
+
+.btn-outline-blue:hover {
+    background-color: rgba(44, 62, 80, 0.1); /* leve fondo primario */
+    color: var(--color-primario);
+    border-color: var(--color-primario);
+}
+
+/* Centrado vertical */
+.view {
+    min-height: 100vh;
+}
+
+/* Suaviza animaciones si las hubiera */
+.fadeIn {
+    animation: fadeIn 1s ease-in;
+}
+.md-form input:focus ~ label,
+.md-form input:valid ~ label {
+    transform: translateY(-20px);
+    font-size: 0.8rem;
+    color: #c51162;
+}
+
+/* Evitar superposición del texto y los íconos */
+.md-form .prefix {
+    top: 0.6rem;
+    font-size: 1.2rem;
+    color: #c51162;
+}
+
+/* Ajuste general para campo enfocado */
+.md-form input:focus {
+    border-color: #c51162;
+    box-shadow: none;
+}
+/* El contenedor del form tiene que ser relativo para que el popup se posicione con respecto a él */
+form {
+  position: relative;
+}
+
+/* Contenedor flotante blanco centrado sobre el formulario */
+.alert-popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: #ffffff; /* Fondo blanco del popup */
+  color: #000000;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  min-width: 320px;
+  max-width: 90vw;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+
+  display: flex;
+  flex-direction: column; /* Apila mensaje y botón verticalmente */
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Franja roja con el mensaje */
+.alert-popup .alert-message {
+  background-color: #f44336; /* Rojo */
+  color: white;
+  padding: 30px 40px;
+  border-radius: 8px;
+  width: 400%;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* Botón "Cerrar" debajo */
+.alert-popup #closeAlertBtn {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.alert-popup #closeAlertBtn:hover {
+  background-color: #d32f2f;
+}
+
+/* Contenedor general para el apilado */
+.login-stack {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+}
+
+/* Hojas apiladas */
+.paper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  top: 0;
+  left: 0;
+}
+
+/* Hoja trasera */
+.paper.back {
+  transform: rotate(-3deg) translate(-10px, 10px);
+  z-index: 1;
+}
+
+/* Hoja del medio */
+.paper.middle {
+  transform: rotate(3.0deg) translate(8px, -8px);
+  z-index: 2;
+}
+
+/* Tarjeta frontal (login real) */
+.paper.card {
+  position: relative;
+  z-index: 3;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+
+    @keyframes slideDown {
+      from {
+        top: 0;
+        opacity: 0;
+      }
+      to {
+        top: 20px;
+        opacity: 1;
+      }
+    }
+
+@keyframes fadein {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeout {
+  from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(-10px); }
+}
 
