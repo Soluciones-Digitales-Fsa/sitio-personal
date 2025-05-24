@@ -19,9 +19,12 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" >
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/roboto-fontface@0.10.0/css/roboto/roboto-fontface.min.css">
 
- 
+  <!-- CSS personalizado -->
+  <link rel="stylesheet" href="styles/estilos-login.css">
+  <link rel="stylesheet" href="styles/estilos-popup.css">
+
 </head>
-<body>
+<body class="login-page">
 
   <header>
     <section class="view">
