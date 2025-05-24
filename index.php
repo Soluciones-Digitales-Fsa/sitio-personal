@@ -1,3 +1,4 @@
+<?php 
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -31,3 +32,4 @@
   <script src="main.js"></script>
 </body>
 </html>
+?>
