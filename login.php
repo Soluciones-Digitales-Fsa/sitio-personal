@@ -74,8 +74,41 @@
       </div>
     </section>
   </header>
-  
 </body>
 </html>
+
+<?php
+ 
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+      include 'db.php';
+
+      $username = isset($_POST['username']) ? trim($_POST['username']) : '';
+      $password = isset($_POST['password']) ? trim($_POST['password']) : '';
+
+      if ($username !== '' && $password !== '') {
+        $stmt = $conn->prepare("SELECT * FROM usuarios WHERE username = ?");
+        $stmt->bind_param("s", $username);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if ($user = $result->fetch_assoc()) {
+          if ($password === $user['contrasenia']) {
+            $_SESSION['logged_in'] = true;
+            header("Location: admin-panel.php");
+            exit;
+          } else {
+            $errorMessage = "Contraseña incorrecta.";
+            $showPopup = true;
+          }
+        } else {
+          $errorMessage = "Usuario no encontrado.";
+          $showPopup = true;
+        }
+      } else {
+        $errorMessage = "Por favor, completá todos los campos.";
+        $showPopup = true;
+      }
+    }
+  ?>
 
 ?>
