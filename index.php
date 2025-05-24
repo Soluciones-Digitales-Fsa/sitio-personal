@@ -41,12 +41,14 @@
       <p>Conectando Ideas, Creando Soluciones</p>
     </div>
   </section>
+  
   <section id="nosotros" class="about">
     <div class="container">
       <h2>Sobre Nosotros</h2>
       
     </div>
   </section>
+  
   <section id="equipo" class="team"> 
     <div class="container">
       <h2>Nuestro Equipo</h2>
@@ -56,6 +58,28 @@
       </div>
     </div>
   </section>
+
+  <section id="idiomas" class="languages">
+  <div class="container">
+    <h2>Idiomas</h2>
+    <ul class="language-list">
+      <li>
+        <img src="#" alt="Español" class="flag-icon">
+        <span>Español (nativo)</span>
+      </li>
+      <li>
+        <img src="#" alt="Inglés" class="flag-icon">
+        <span>Inglés (avanzado)</span>
+      </li>
+      <li>
+        <img src="#" alt="Portugués" class="flag-icon">
+        <span>Portugués (básico)</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+  
   
 </main>
 
