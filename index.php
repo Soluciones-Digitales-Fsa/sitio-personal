@@ -47,7 +47,15 @@
       
     </div>
   </section>
+  <section id="equipo" class="team"> 
+    <div class="container">
+      <h2>Nuestro Equipo</h2>
+      <div class="team-members">
 
+        
+      </div>
+    </div>
+  </section>
   
 </main>
 
