@@ -132,7 +132,20 @@
     </div>
   </section>
 
-  
+  <section id="contacto" class="contact">
+    <div class="container">
+      <h2>Contacto</h2>
+
+      
+      <form method="post" action="index.php#contacto">
+        <input type="hidden" name="accion" value="guardar_mensaje" />
+        <input type="text" name="nombre" placeholder="Tu nombre" required />
+        <input type="email" name="email" placeholder="Tu correo" required />
+        <textarea name="mensaje" placeholder="Tu mensaje..." required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+  </section>
   
 </main>
 
