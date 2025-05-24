@@ -79,6 +79,30 @@
   </div>
 </section>
 
+<section id="proyectos" class="projects">
+  <div class="container">
+    <h2>Proyectos</h2>
+
+    <div class="slider-wrapper" style="position: relative; width: 480px; margin: 0 auto;">
+      <!-- Flecha izquierda -->
+      <button id="btnLeft" class="arrow-btn arrow-left" aria-label="Proyecto anterior">
+        <i class="arrow-icon left-icon"></i>
+      </button>
+
+      <!-- Contenedor scroll -->
+      <div class="project-list scroll-snap-container">
+        
+   
+      </div>
+
+      <!-- Flecha derecha -->
+      <button id="btnRight" class="arrow-btn arrow-right" aria-label="Siguiente proyecto">
+        <i class="arrow-icon right-icon"></i>
+      </button>
+    </div>
+  </div>
+</section>
+
   
   
 </main>
