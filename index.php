@@ -41,6 +41,12 @@
       <p>Conectando Ideas, Creando Soluciones</p>
     </div>
   </section>
+  <section id="nosotros" class="about">
+    <div class="container">
+      <h2>Sobre Nosotros</h2>
+      
+    </div>
+  </section>
 
   
 </main>
