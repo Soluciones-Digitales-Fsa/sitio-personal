@@ -103,6 +103,20 @@
   </div>
 </section>
 
+<section id="herramientas" class="tools">
+  <div class="container">
+    <h2>Herramientas y Tecnologías</h2>
+    <div class="tools-logos">
+      <i class="fab fa-html5 fa-3x"></i>
+      <i class="fab fa-css3-alt fa-3x"></i>
+      <i class="fab fa-js-square fa-3x"></i>
+      <i class="fab fa-php fa-3x"></i>
+      <i class="fas fa-database fa-3x"></i>
+      <i class="fab fa-git-alt fa-3x"></i>
+    </div>
+  </div>
+</section>
+
   
   
 </main>
