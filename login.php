@@ -1,5 +1,5 @@
 <?php 
-session_start(); ?> 
+session_start();
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -121,4 +121,13 @@ session_start(); ?>
     </div>
   <?php endif; ?>
 
+<script>
+  const closeAlertBtn = document.getElementById('closeAlertBtn');
+  if (closeAlertBtn) {
+    closeAlertBtn.addEventListener('click', () => {
+      document.getElementById('alertPopup').style.display = 'none';
+    });
+  }
+</script>
+?> 
 
