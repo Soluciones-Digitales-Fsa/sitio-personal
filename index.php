@@ -33,6 +33,18 @@
 </nav>
   </div>
 </header>
+
+<main>
+  <section id="inicio" class="hero">
+    <div class="container-titulo">
+      <h1 class="">Bienvenidos a DevNode</h1>
+      <p>Conectando Ideas, Creando Soluciones</p>
+    </div>
+  </section>
+
+  
+</main>
+
   
 </body>
 </html>
