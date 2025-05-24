@@ -22,7 +22,56 @@
  
 </head>
 <body>
-    
+
+  <header>
+    <section class="view">
+      <div class="mask rgba-stylish-strong h-100 d-flex justify-content-center align-items-center">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-5 col-lg-6 col-md-10 col-sm-12 mx-auto">
+        
+              <!-- Contenedor de Hojas Apiladas -->
+              <div class="login-stack fadeIn">
+                <div class="paper back"></div>
+                <div class="paper middle"></div>
+
+                <div class="paper card">
+                  <div class="card-body">
+                    <div class="form-header transparent-header">
+                        <i class="fas fa-users icon-only"></i> 
+                        <h3>Login Administrador</h3><br>
+                    </div>
+
+                    <form method="POST" action="login.php">
+                      <div class="md-form">
+                        <i class="fas fa-user prefix" style="color:rgb(14, 13, 13);"></i>
+                        <input type="text" id="user" name="username" class="form-control" autocomplete="off" required>
+                        <label for="username">Nombre de usuario</label> <br>
+                      </div>
+
+                      <div class="md-form">
+                        <i class="fas fa-lock prefix" style="color:rgb(14, 13, 13);"></i>
+                        <input type="password" id="password" name="password" class="form-control" autocomplete="off" required>
+                        <label for="password">Contraseña</label> <br>
+                      </div>
+
+                      <div class="text-center mt-4 mb-2">
+                        <button type="submit" class="btn blue-gradient btn-lg btn-block">Ingresar</button>
+                        <a href="index.php" class="btn btn-outline-blue btn-lg btn-block">
+                            <i class="fas fa-home mr-2"></i> Volver al Inicio</a>
+
+                      </div>
+                    </form>
+                  </div> <!-- card-body -->
+                </div> <!-- paper.card -->
+              </div> <!-- login-stack -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </header>
+  
 </body>
 </html>
 
