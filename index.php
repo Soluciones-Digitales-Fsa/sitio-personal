@@ -159,7 +159,17 @@
     <p>&copy; <?php echo date("Y"); ?> DevNode. Todos los derechos reservados.</p>
   </div>
 </footer>
-  
+
+<!-- Botón flotante de WhatsApp -->
+<a href="https://wa.me/549XXXXXXXXXX" class="whatsapp-float" target="_blank" title="WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- Botón volver arriba -->
+<a href="#inicio" class="scroll-top" title="Volver arriba">
+  <i class="fas fa-chevron-up"></i>
+</a>
+
 </body>
 </html>
 ?>
