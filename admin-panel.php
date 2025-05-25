@@ -158,7 +158,21 @@ if ($result) {
         $contact_messages[] = $row;
     }
 }
-    
+
+// Mostrar mensajes
+$msg = $_GET['msg'] ?? '';
+$msg_text = '';
+switch ($msg) {
+    //case 'mensaje_guardado': $msg_text = "Mensaje enviado correctamente."; break;
+    case 'sobre_guardado': $msg_text = "Sección 'Sobre Nosotros' guardada correctamente."; break;
+    case 'equipo_agregado': $msg_text = "Miembro del equipo agregado correctamente."; break;
+    case 'equipo_editado': $msg_text = "Miembro del equipo editado correctamente."; break;
+    case 'equipo_eliminado': $msg_text = "Miembro del equipo eliminado correctamente."; break;
+    case 'proyecto_agregado': $msg_text = "Proyecto agregado correctamente."; break;
+    case 'proyecto_editado': $msg_text = "Proyecto editado correctamente."; break;
+    case 'proyecto_eliminado': $msg_text = "Proyecto eliminado correctamente."; break;
+}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
