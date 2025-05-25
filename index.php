@@ -309,6 +309,23 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['accion']) && $_POST['
   </div>
 </section>
 
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const container = document.querySelector('.scroll-snap-container');
+    const btnLeft = document.getElementById('btnLeft');
+    const btnRight = document.getElementById('btnRight');
+    const cardWidth = 480 + 20; // ancho de tarjeta + gap (20px)
+
+    btnLeft.addEventListener('click', () => {
+      container.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+    });
+
+    btnRight.addEventListener('click', () => {
+      container.scrollBy({ left: cardWidth, behavior: 'smooth' });
+    });
+  });
+</script>
+
 <section id="herramientas" class="tools">
   <div class="container">
     <h2>Herramientas y Tecnologías</h2>
