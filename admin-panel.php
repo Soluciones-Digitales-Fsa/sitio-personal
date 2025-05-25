@@ -32,6 +32,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $stmt->execute();
         $stmt->close();
     }
+        header("Location: admin-panel.php?msg=sobre_guardado");
+        exit;
+    }
+
+
+
+        
 
 <!DOCTYPE html>
 <html lang="en">
