@@ -22,6 +22,17 @@
         <button type="submit">Guardar</button>
     </form>
   </section>
+
+   <section>
+    <h2>Equipo</h2>
+    <form method="post" action="admin-panel.php" class="agregar-form">
+        <input type="hidden" name="accion" value="agregar_equipo"/>
+        <input type="text" name="nombre" placeholder="Nombre" required/>
+        <input type="text" name="rol" placeholder="Rol" required/>
+        <button type="submit">Agregar Miembro</button>
+        
+    </form>
+   </section> 
     
 </main>
 </body>
