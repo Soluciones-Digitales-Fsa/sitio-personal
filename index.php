@@ -90,6 +90,166 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['accion']) && $_POST['
       <h2>Nuestro Equipo</h2>
       <div class="team-members">
 
+          <div class="card-container" title="Pasa el puntero para girar la tarjeta">
+    <div class="card">
+      <div class="card-face card-front member">
+        <img class="img-member" src="images/veronica.jpg" alt="Verónica Álvarez" />
+        <?php
+          $result = $conn->query("SELECT * FROM equipo WHERE id = 1");
+          while ($row = $result->fetch_assoc()) {
+              echo "<div class='nombre'>";
+              echo "<h3>{$row['nombre']}</h3>";
+              echo "<p>{$row['rol']}</p>";
+              echo "</div>";
+          }
+        ?>
+      </div>
+      <div class="card-face card-back">
+        <h3>Más Información</h3>
+        <p>Aquí puede ir información adicional sobre el miembro.</p>
+        <p>Teléfono: +123 456 789</p>
+        <p>Email: veronica@example.com</p>
+      </div>
+    </div>
+  </div>
+  
+      <div class="card-container" title="Pasa el puntero para girar la tarjeta">
+    <div class="card">
+      <div class="card-face card-front member">
+        <img class="img-member" src="images/yanina.jpg" alt="Yanina Cabrera">
+        <?php
+          $result = $conn->query("SELECT * FROM equipo WHERE id = 2");
+          while ($row = $result->fetch_assoc()) {
+              echo "<div class='nombre'>";
+              echo "<h3>{$row['nombre']}</h3>";
+              echo "<p>{$row['rol']}</p>";
+              echo "</div>";
+          }
+        ?>
+      </div>
+      <div class="card-face card-back">
+        <h3>Más Información</h3>
+        <p>Aquí puede ir información adicional sobre el miembro.</p>
+        <p>Teléfono: +123 456 789</p>
+        <p>Email: veronica@example.com</p>
+      </div>
+    </div>
+  </div>
+
+      <div class="card-container" title="Pasa el puntero para girar la tarjeta">
+    <div class="card">
+      <div class="card-face card-front member">
+        <img class="img-member" src="images/valeria.jpg" alt="Valeria Figueredo">
+        <?php
+          $result = $conn->query("SELECT * FROM equipo WHERE id = 3");
+          while ($row = $result->fetch_assoc()) {
+              echo "<div class='nombre'>";
+              echo "<h3>{$row['nombre']}</h3>";
+              echo "<p>{$row['rol']}</p>";
+              echo "</div>";
+          }
+        ?>
+      </div>
+      <div class="card-face card-back">
+        <h3>Más Información</h3>
+        <p>Aquí puede ir información adicional sobre el miembro.</p>
+        <p>Teléfono: +123 456 789</p>
+        <p>Email: veronica@example.com</p>
+      </div>
+    </div>
+  </div>
+
+      <div class="card-container" title="Pasa el puntero para girar la tarjeta">
+    <div class="card">
+      <div class="card-face card-front member">
+        <img class="img-member" src="images/sebastian.jpg" alt="Sebastián Mora">
+        <?php
+          $result = $conn->query("SELECT * FROM equipo WHERE id = 4");
+          while ($row = $result->fetch_assoc()) {
+              echo "<div class='nombre'>";
+              echo "<h3>{$row['nombre']}</h3>";
+              echo "<p>{$row['rol']}</p>";
+              echo "</div>";
+          }
+        ?>
+      </div>
+      <div class="card-face card-back">
+        <h3>Más Información</h3>
+        <p>Aquí puede ir información adicional sobre el miembro.</p>
+        <p>Teléfono: +123 456 789</p>
+        <p>Email: veronica@example.com</p>
+      </div>
+    </div>
+  </div>
+
+      <div class="card-container" title="Pasa el puntero para girar la tarjeta">
+    <div class="card">
+      <div class="card-face card-front member">
+        <img class="img-member" src="images/gustavo.jpg" alt="Gustavo Ayala">
+        <?php
+          $result = $conn->query("SELECT * FROM equipo WHERE id = 5");
+          while ($row = $result->fetch_assoc()) {
+              echo "<div class='nombre'>";
+              echo "<h3>{$row['nombre']}</h3>";
+              echo "<p>{$row['rol']}</p>";
+              echo "</div>";
+          }
+        ?>
+      </div>
+      <div class="card-face card-back">
+        <h3>Más Información</h3>
+        <p>Aquí puede ir información adicional sobre el miembro.</p>
+        <p>Teléfono: +123 456 789</p>
+        <p>Email: veronica@example.com</p>
+      </div>
+    </div>
+  </div>
+
+      <div class="card-container" title="Pasa el puntero para girar la tarjeta">
+    <div class="card">
+      <div class="card-face card-front member">
+        <img class="img-member" src="images/hugo.jpg" alt="Hugo Brandan">
+        <?php
+          $result = $conn->query("SELECT * FROM equipo WHERE id = 6");
+          while ($row = $result->fetch_assoc()) {
+              echo "<div class='nombre'>";
+              echo "<h3>{$row['nombre']}</h3>";
+              echo "<p>{$row['rol']}</p>";
+              echo "</div>";
+          }
+        ?>
+      </div>
+      <div class="card-face card-back">
+        <h3>Más Información</h3>
+        <p>Aquí puede ir información adicional sobre el miembro.</p>
+        <p>Teléfono: +123 456 789</p>
+        <p>Email: veronica@example.com</p>
+      </div>
+    </div>
+  </div>
+  
+      <div class="card-container" title="Pasa el puntero para girar la tarjeta">
+    <div class="card">
+      <div class="card-face card-front member">
+        <img class="img-member" src="images/noelia.jpg" alt="Noelia Chávez">
+        <?php
+          $result = $conn->query("SELECT * FROM equipo WHERE id = 7");
+          while ($row = $result->fetch_assoc()) {
+              echo "<div class='nombre'>";
+              echo "<h3>{$row['nombre']}</h3>";
+              echo "<p>{$row['rol']}</p>";
+              echo "</div>";
+          }
+        ?>
+      </div>
+      <div class="card-face card-back">
+        <h3>Más Información</h3>
+        <p>Aquí puede ir información adicional sobre el miembro.</p>
+        <p>Teléfono: +123 456 789</p>
+        <p>Email: veronica@example.com</p>
+      </div>
+    </div>
+  </div>
         
       </div>
     </div>
