@@ -300,5 +300,4 @@ switch ($msg) {
 </main>
 </body>
 </html>
-
-<?
+<?php $conn->close(); ?>
