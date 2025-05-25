@@ -5,6 +5,29 @@ function limpiar_input($data) {
     return htmlspecialchars(stripslashes(trim($data)));
 }
 
+//manejo de envío de formulario de contacto
+$msg = '';
+if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['accion']) && $_POST['accion'] === 'guardar_mensaje') {
+    $nombre = limpiar_input($_POST['nombre'] ?? '');
+    $email = limpiar_input($_POST['email'] ?? '');
+    $mensaje = limpiar_input($_POST['mensaje'] ?? '');
+    if ($nombre && $email && $mensaje) {
+        $sql = "INSERT INTO contactos (nombre, email, mensaje) VALUES (?, ?, ?)";
+        $stmt = $conn->prepare($sql);
+        if ($stmt) {
+            $stmt->bind_param("sss", $nombre, $email, $mensaje);
+            $stmt->execute();
+            $stmt->close();
+            $msg = "Mensaje enviado correctamente.";
+        } else {
+            $msg = "Error al preparar la consulta.";
+        }
+    } else {
+        $msg = "Por favor complete todos los campos.";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
