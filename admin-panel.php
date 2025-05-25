@@ -30,9 +30,20 @@
         <input type="text" name="nombre" placeholder="Nombre" required/>
         <input type="text" name="rol" placeholder="Rol" required/>
         <button type="submit">Agregar Miembro</button>
-        
     </form>
+       
    </section> 
+
+   <section>
+    <h2>Proyectos</h2>
+    <form method="post" action="admin-panel.php" class="agregar-form">
+        <input type="hidden" name="accion" value="agregar_proyecto"/>
+        <input type="text" name="titulo" placeholder="Título" required/>
+        <input type="text" name="descripcion" placeholder="Descripción" required/>
+        <button type="submit">Agregar Proyecto</button>
+    </form>
+       
+    </section> 
     
 </main>
 </body>
