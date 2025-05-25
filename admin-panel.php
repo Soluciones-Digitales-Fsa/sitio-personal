@@ -93,6 +93,21 @@ if ($accion === 'agregar_equipo') {
         exit;
     }
 
+if ($accion === 'editar_proyecto') {
+        $id = intval($_POST['id'] ?? 0);
+        $titulo = limpiar_input($_POST['titulo'] ?? '');
+        $descripcion = limpiar_input($_POST['descripcion'] ?? '');
+        if ($id > 0 && $titulo && $descripcion) {
+            $sql = "UPDATE proyectos SET titulo = ?, descripcion = ? WHERE id = ?";
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param("ssi", $titulo, $descripcion, $id);
+            $stmt->execute();
+            $stmt->close();
+        }
+        header("Location: admin-panel.php?msg=proyecto_editado");
+        exit;
+    }
+        
 <!DOCTYPE html>
 <html lang="en">
 <head>
