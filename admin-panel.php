@@ -107,7 +107,23 @@ if ($accion === 'editar_proyecto') {
         header("Location: admin-panel.php?msg=proyecto_editado");
         exit;
     }
-        
+
+    if ($accion === 'eliminar_proyecto') {
+        $id = intval($_POST['id'] ?? 0);
+        if ($id > 0) {
+            $sql = "DELETE FROM proyectos WHERE id = ?";
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param("i", $id);
+            $stmt->execute();
+            $stmt->close();
+        }
+        header("Location: admin-panel.php?msg=proyecto_eliminado");
+        exit;
+    }
+
+}
+
+    
 <!DOCTYPE html>
 <html lang="en">
 <head>
