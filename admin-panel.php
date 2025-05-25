@@ -1,5 +1,12 @@
 <?php 
 
+include 'db.php';
+include 'autenticacion.php';
+// Función para limpiar entrada
+function limpiar_input($data) {
+    return htmlspecialchars(stripslashes(trim($data)));
+}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
