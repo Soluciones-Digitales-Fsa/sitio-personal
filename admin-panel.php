@@ -13,7 +13,17 @@
     <h1>Panel de Administrador</h1>
     <a href="logout.php">Cerrar sesión</a>
 </header>
+<main>
+    <section>
+    <h2>Sobre Nosotros</h2>
+    <form method="post" action="admin-panel.php">
+        <textarea name="contenido" rows="6" required><?= htmlspecialchars($sobre_nosotros) ?></textarea><br/>
+        <input type="hidden" name="accion" value="guardar_sobre"/>
+        <button type="submit">Guardar</button>
+    </form>
+  </section>
     
+</main>
 </body>
 </html>
 
