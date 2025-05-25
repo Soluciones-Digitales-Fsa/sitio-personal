@@ -344,12 +344,42 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['accion']) && $_POST['
     <div class="container">
       <h2>Testimonios</h2>
       <div class="testimonial">
-        
+
+          <?php
+        $result = $conn->query("SELECT * FROM testimonios WHERE id = 1");
+        while ($row = $result->fetch_assoc()) {
+            echo "<div class='testimonio'>";
+            echo "<p>{$row['testimonio']}</p>";
+            echo "<h4>{$row['nombre']}</h4>";
+            echo "</div>";
+        }
+        ?>
+          
       </div>
       <div class="testimonial">
-        
+
+        <?php
+        $result = $conn->query("SELECT * FROM testimonios WHERE id = 2");
+        while ($row = $result->fetch_assoc()) {
+            echo "<div class='testimonio'>";
+            echo "<p>{$row['testimonio']}</p>";
+            echo "<h4>{$row['nombre']}</h4>";
+            echo "</div>";
+        }
+        ?>
+          
       </div>
       <div class="testimonial">
+
+          <?php
+        $result = $conn->query("SELECT * FROM testimonios WHERE id = 3");
+        while ($row = $result->fetch_assoc()) {
+            echo "<div class='testimonio'>";
+            echo "<p>{$row['testimonio']}</p>";
+            echo "<h4>{$row['nombre']}</h4>";
+            echo "</div>";
+        }
+        ?>
         
       </div>
     </div>
