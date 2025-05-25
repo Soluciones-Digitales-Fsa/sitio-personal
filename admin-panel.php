@@ -148,6 +148,16 @@ if ($result) {
         $proyectos[] = $row;
     }
 }
+
+// Cargar mensajes de contacto
+$contact_messages = [];
+$sql = "SELECT * FROM contactos ORDER BY fecha_creado DESC";
+$result = $conn->query($sql);
+if ($result) {
+    while ($row = $result->fetch_assoc()) {
+        $contact_messages[] = $row;
+    }
+}
     
 <!DOCTYPE html>
 <html lang="en">
