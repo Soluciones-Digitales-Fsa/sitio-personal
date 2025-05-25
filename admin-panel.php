@@ -51,6 +51,20 @@ if ($accion === 'agregar_equipo') {
         exit;
     }
 
+ if ($accion === 'editar_equipo') {
+        $id = intval($_POST['id'] ?? 0);
+        $nombre = limpiar_input($_POST['nombre'] ?? '');
+        $rol = limpiar_input($_POST['rol'] ?? '');
+        if ($id > 0 && $nombre && $rol) {
+            $sql = "UPDATE equipo SET nombre = ?, rol = ? WHERE id = ?";
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param("ssi", $nombre, $rol, $id);
+            $stmt->execute();
+            $stmt->close();
+        }
+        header("Location: admin-panel.php?msg=equipo_editado");
+        exit;
+    }
         
 
 <!DOCTYPE html>
