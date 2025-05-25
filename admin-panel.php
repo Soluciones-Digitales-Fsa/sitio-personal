@@ -123,6 +123,31 @@ if ($accion === 'editar_proyecto') {
 
 }
 
+// Cargar datos para mostrar en el panel
+$sobre_nosotros = "";
+$sql = "SELECT contenido FROM nosotros LIMIT 1";
+$result = $conn->query($sql);
+if ($result && $row = $result->fetch_assoc()) {
+    $sobre_nosotros = $row['contenido'];
+}
+
+$equipo = [];
+$sql = "SELECT * FROM equipo ORDER BY id DESC";
+$result = $conn->query($sql);
+if ($result) {
+    while ($row = $result->fetch_assoc()) {
+        $equipo[] = $row;
+    }
+}
+
+$proyectos = [];
+$sql = "SELECT * FROM proyectos ORDER BY id DESC";
+$result = $conn->query($sql);
+if ($result) {
+    while ($row = $result->fetch_assoc()) {
+        $proyectos[] = $row;
+    }
+}
     
 <!DOCTYPE html>
 <html lang="en">
