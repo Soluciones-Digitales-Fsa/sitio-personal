@@ -36,7 +36,20 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         exit;
     }
 
+if ($accion === 'agregar_equipo') {
+        $nombre = limpiar_input($_POST['nombre'] ?? '');
+        $rol = limpiar_input($_POST['rol'] ?? '');
 
+        if ($nombre && $rol) {
+            $sql = "INSERT INTO equipo (nombre, rol) VALUES (?, ?)";
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param("ss", $nombre, $rol);
+            $stmt->execute();
+            $stmt->close();
+        }
+        header("Location: admin-panel.php?msg=equipo_agregado");
+        exit;
+    }
 
         
 
