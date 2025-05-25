@@ -209,7 +209,33 @@ switch ($msg) {
         <input type="text" name="rol" placeholder="Rol" required/>
         <button type="submit">Agregar Miembro</button>
     </form>
-       
+        <table>
+        <thead>
+            <tr><th>Nombre</th><th>Rol</th><th>Acciones</th></tr>
+        </thead>
+        <tbody>
+        <?php foreach ($equipo as $miembro): ?>
+            <tr>
+                <form method="post" action="admin-panel.php" class="editar-form">
+                    <td>
+                        <input type="text" name="nombre" value="<?= htmlspecialchars($miembro['nombre']) ?>" required/>
+                    </td>
+                    <td>
+                        <input type="text" name="rol" value="<?= htmlspecialchars($miembro['rol']) ?>" required/>
+                    </td>
+                    <td>
+                        <input type="hidden" name="id" value="<?= $miembro['id'] ?>"/>
+                        <button type="submit" name="accion" value="editar_equipo" title="Guardar">Guardar</button>
+                        <button type="submit" name="accion" value="eliminar_equipo" title="Eliminar" onclick="return confirm('¿Eliminar este miembro?');">Eliminar</button>
+                    </td>
+                </form>
+            </tr>
+        <?php endforeach; ?>
+        <?php if (empty($equipo)): ?>
+            <tr><td colspan="3">No hay miembros en el equipo.</td></tr>
+        <?php endif; ?>
+        </tbody>
+    </table>
    </section> 
 
    <section>
