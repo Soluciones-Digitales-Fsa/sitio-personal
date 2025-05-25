@@ -274,6 +274,28 @@ switch ($msg) {
         </tbody>
     </table>
     </section> 
+
+    <section> 
+    <h2>Contactos</h2>
+            <table>
+        <thead>
+            <tr><th>Nombre</th><th>Correo</th><th>Mensaje</th><th>Fecha</th></tr>
+        </thead>
+        <tbody>
+        <?php foreach ($contact_messages as $message): ?>
+            <tr>
+                <td><?= htmlspecialchars($message['nombre']) ?></td>
+                <td><?= htmlspecialchars($message['email']) ?></td>
+                <td><?= nl2br(htmlspecialchars($message['mensaje'])) ?></td>
+                <td><?= $message['fecha_creado'] ?></td>
+            </tr>
+        <?php endforeach; ?>
+        <?php if (empty($contact_messages)): ?>
+            <tr><td colspan="4">No hay mensajes de contacto.</td></tr>
+        <?php endif; ?>
+        </tbody>
+    </table>
+</section>
     
 </main>
 </body>
