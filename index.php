@@ -389,6 +389,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['accion']) && $_POST['
     <div class="container">
       <h2>Contacto</h2>
 
+        <?php if ($msg): ?>
+      <p class="mensaje <?= strpos($msg, 'correctamente') !== false ? 'exito' : 'error' ?>"><?= htmlspecialchars($msg) ?></p>
+      <?php endif; ?>
       
       <form method="post" action="index.php#contacto">
         <input type="hidden" name="accion" value="guardar_mensaje" />
@@ -425,4 +428,4 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['accion']) && $_POST['
 
 </body>
 </html>
-?>
+
