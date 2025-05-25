@@ -1,4 +1,10 @@
 <?php 
+
+include 'db.php';
+function limpiar_input($data) {
+    return htmlspecialchars(stripslashes(trim($data)));
+}
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -64,15 +70,15 @@
     <h2>Idiomas</h2>
     <ul class="language-list">
       <li>
-        <img src="#" alt="Español" class="flag-icon">
+        <img src="images/argentina.png" alt="Español" class="flag-icon">
         <span>Español (nativo)</span>
       </li>
       <li>
-        <img src="#" alt="Inglés" class="flag-icon">
+        <img src="images/reino-unido.png" alt="Inglés" class="flag-icon">
         <span>Inglés (avanzado)</span>
       </li>
       <li>
-        <img src="#" alt="Portugués" class="flag-icon">
+        <img src="images/brasil.png" alt="Portugués" class="flag-icon">
         <span>Portugués (básico)</span>
       </li>
     </ul>
