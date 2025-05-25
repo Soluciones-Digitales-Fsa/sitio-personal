@@ -7,6 +7,32 @@ function limpiar_input($data) {
     return htmlspecialchars(stripslashes(trim($data)));
 }
 
+// Manejo de POST para CRUD
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+    $accion = $_POST['accion'] ?? '';
+
+    if ($accion === 'guardar_sobre') {
+        $contenido = $_POST['contenido'] ?? '';
+        $contenido = limpiar_input($contenido);
+
+        // Actualizar o insertar el contenido "sobre nosotros"
+        $sql_check = "SELECT id FROM nosotros LIMIT 1";
+    $result = $conn->query($sql_check);
+    if ($result && $row = $result->fetch_assoc()) {
+        $id_nosotros = $row['id']; // Obtén el id
+        $sql_update = "UPDATE nosotros SET contenido = ? WHERE id = ?";
+        $stmt = $conn->prepare($sql_update);
+        $stmt->bind_param("si", $contenido, $id_nosotros); // Vincula el contenido y el id
+        $stmt->execute();
+        $stmt->close();
+    } else {
+        $sql_insert = "INSERT INTO nosotros (contenido) VALUES (?)";
+        $stmt = $conn->prepare($sql_insert);
+        $stmt->bind_param("s", $contenido);
+        $stmt->execute();
+        $stmt->close();
+    }
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
