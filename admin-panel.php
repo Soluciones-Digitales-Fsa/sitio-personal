@@ -186,6 +186,11 @@ switch ($msg) {
     <h1>Panel de Administrador</h1>
     <a href="logout.php">Cerrar sesión</a>
 </header>
+    
+<?php if ($msg_text): ?>
+<section class="mensaje-exito"><?= htmlspecialchars($msg_text) ?></section>
+<?php endif; ?>
+    
 <main>
     <section>
     <h2>Sobre Nosotros</h2>
