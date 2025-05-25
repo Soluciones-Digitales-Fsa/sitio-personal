@@ -74,7 +74,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['accion']) && $_POST['
   <section id="nosotros" class="about">
     <div class="container">
       <h2>Sobre Nosotros</h2>
-      
+           <?php
+        $result = $conn->query("SELECT * FROM nosotros ORDER BY id DESC");
+        while ($row = $result->fetch_assoc()) {
+            echo "<div class='contenido'>";
+            echo "<p>{$row['contenido']}</p>";
+            echo "</div>";
+        }
+        ?>
     </div>
   </section>
   
