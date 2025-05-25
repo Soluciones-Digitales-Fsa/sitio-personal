@@ -246,7 +246,33 @@ switch ($msg) {
         <input type="text" name="descripcion" placeholder="Descripción" required/>
         <button type="submit">Agregar Proyecto</button>
     </form>
-       
+       <table>
+        <thead>
+        <tr><th>Título</th><th>Descripción</th><th>Acciones</th></tr>
+        </thead>
+        <tbody>
+        <?php foreach ($proyectos as $proyecto): ?>
+            <tr>
+                <form method="post" action="admin-panel.php" class="editar-form">
+                    <td>
+                        <input type="text" name="titulo" value="<?= htmlspecialchars($proyecto['titulo']) ?>" required/>
+                    </td>
+                    <td>
+                        <input type="text" name="descripcion" value="<?= htmlspecialchars($proyecto['descripcion']) ?>" required/>
+                    </td>
+                    <td>
+                        <input type="hidden" name="id" value="<?= $proyecto['id'] ?>"/>
+                        <button type="submit" name="accion" value="editar_proyecto" title="Guardar">Guardar</button>
+                        <button type="submit" name="accion" value="eliminar_proyecto" title="Eliminar" onclick="return confirm('¿Eliminar este proyecto?');">Eliminar</button>
+                    </td>
+                </form>
+            </tr>
+        <?php endforeach; ?>
+        <?php if (empty($proyectos)): ?>
+            <tr><td colspan="3">No hay proyectos registrados.</td></tr>
+        <?php endif; ?>
+        </tbody>
+    </table>
     </section> 
     
 </main>
