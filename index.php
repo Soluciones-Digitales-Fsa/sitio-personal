@@ -287,7 +287,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['accion']) && $_POST['
 
       <!-- Contenedor scroll -->
       <div class="project-list scroll-snap-container">
-        
+
+          <?php
+          $result = $conn->query("SELECT * FROM proyectos ORDER BY id DESC");
+          while ($row = $result->fetch_assoc()) {
+              echo "<div class='project'>";
+              echo "<h3>" . htmlspecialchars($row['titulo']) . "</h3>";
+              echo "<p>" . htmlspecialchars($row['descripcion']) . "</p>";
+              echo "<button>Ir al proyecto</button>";
+              echo "</div>";
+          }
+        ?>
    
       </div>
 
