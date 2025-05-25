@@ -79,6 +79,20 @@ if ($accion === 'agregar_equipo') {
         exit;
     }
 
+    if ($accion === 'agregar_proyecto') {
+        $titulo = limpiar_input($_POST['titulo'] ?? '');
+        $descripcion = limpiar_input($_POST['descripcion'] ?? '');
+        if ($titulo && $descripcion) {
+            $sql = "INSERT INTO proyectos (titulo, descripcion) VALUES (?, ?)";
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param("ss", $titulo, $descripcion);
+            $stmt->execute();
+            $stmt->close();
+        }
+        header("Location: admin-panel.php?msg=proyecto_agregado");
+        exit;
+    }
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
